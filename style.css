@@ -1,0 +1,106 @@
+:root {
+  --pink: rgb(253, 228, 218);
+  --gray: rgb(34, 34, 34);
+  --black: rgb(19, 18, 18);
+  --white: rgb(255, 255, 255);
+  --green: rgba(142, 214, 7, 0.548);
+  --green2: rgba(169, 214, 7, 0.404);
+  --yellow: rgba(238, 255, 0, 0.39);
+  --teal: rgba(125, 128, 2, 0.733);
+}
+.light {
+  --bg: linear-gradient(to right, var(--white), var(--pink));
+  --circlesBg: var(--black);
+  --text: var(--white);
+}
+.dark {
+  --bg: linear-gradient(to right, var(--black), var(--gray));
+  --circlesBg: var(--white);
+  --text: var(--gray);
+}
+.solar {
+  --bg: linear-gradient(to right, var(--green), var(--yellow));
+  --circlesBg: var(--teal);
+  --text: var(--white);
+}
+* {
+  margin: 0;
+}
+body {
+  color: var(--text);
+  background: var(--bg);
+  transition: 2s;
+}
+main {
+  height: fit-content;
+  display: flex;
+  gap: 60px;
+  position: relative;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+.list {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  height: fit-content;
+}
+
+.listItem {
+  transition: 500ms;
+  display: block;
+  width: 220px;
+  background: var(--circlesBg);
+  height: 220px;
+  border-radius: 50%;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+li.listItem {
+  cursor: pointer;
+  list-style: none;
+}
+li.listItem a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 30px;
+  margin: 20px;
+}
+li.listItem a::selection {
+  background-color: #fffbfb;
+  color: black;
+}
+
+@keyframes color-rotate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+.image {
+  margin-top: 50px;
+}
+.image:hover {
+  animation: color-rotate 800ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@media (max-width: 380px ) {
+    .list
+    {
+        margin-left: -10px;
+    }
+}
